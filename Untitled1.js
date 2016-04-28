@@ -1,3 +1,6 @@
+$( document ).ready(function() {
+  
+
 
 var GROUND_LEVEL = 480;
 
@@ -6,6 +9,7 @@ var context = canvas.getContext("2d");
 canvas.width = 600;
 canvas.height = 600;
 document.body.appendChild(canvas);
+console.log(document.body);
 document.onkeydown = function(key) {
   move(key.keyCode);
 };
@@ -44,14 +48,14 @@ var move = function(key) {
 };
 
 var gravity= function(){
-  if (KirbyObject.y + Kirby.height === GROUND_LEVEL) {
+  if (kirbyObject.y + kirby.height === GROUND_LEVEL) {
     return;
   } else {
-    KirbyObject.y += 1;
+    kirbyObject.y += 1;
   }
 };
 
-
+console.log(kirbyObject);
 
 var metaKnightReady = false;
 var metaKnight = new Image();
@@ -135,3 +139,4 @@ var main = function() {
 main();
 
 
+});
